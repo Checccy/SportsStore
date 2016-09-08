@@ -1,0 +1,29 @@
+﻿@model SportsStore.Web.Areas.ProductArea.Models.ProductListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ProductArea/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $(".nano").nanoScroller({ alwaysVisible: false });
+    })
+</script>
+<h2>SportsStore</h2>
+<div class="nano">
+    <div class="row content">
+        <div class="col-xs-3">
+            <h4>@{ Html.RenderAction("Menu", "Nav");}</h4>
+        </div>
+        <div class="col-xs-9">
+            @foreach (var p in Model.Products)
+            {
+                Html.RenderPartial("ProductSummary", p);
+            }
+            <nav>
+                <ul class="pagination pull-right">
+                    @Html.PageLinks(Model.ProductPagingDTO, x => Url.Action("", new { page = x }))
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

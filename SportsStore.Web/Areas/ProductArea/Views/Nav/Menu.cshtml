@@ -1,0 +1,9 @@
+﻿@model IEnumerable<string>
+@foreach (var link in Model)
+{
+
+    <h3>@Html.RouteLink(link, new { controller = "Product", action = "Index", id = UrlParameter.Optional, category = link, page = 1 },new {@class= "text-muted" })</h3>
+    @*<h3><a href="~/ProductArea/Product?category=@link&page=1" class="text-muted">@link</a>
+    </h3>*@
+
+}

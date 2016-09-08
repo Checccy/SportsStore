@@ -1,0 +1,16 @@
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\SportsStore.Domain.dll.config
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\SportsStore.Domain.dll
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\SportsStore.Domain.pdb
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.dll
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.SqlServer.dll
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.xml
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.SqlServer.xml
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\LearnHard\SportsStore\SportsStore.Domain\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+G:\LearnHard\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.Migrations.InitialCreate.resources
+G:\LearnHard\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.Migrations.StringLength.resources
+G:\LearnHard\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.Migrations.addImg.resources
+G:\LearnHard\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.Migrations.AddImgeType.resources
+G:\LearnHard\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.csproj.GenerateResource.Cache
+G:\LearnHard\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.dll
+G:\LearnHard\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.pdb

@@ -1,0 +1,66 @@
+﻿@model SportsStore.Domain.Entities.Product
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/ProductArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr/>
+    @using (Html.BeginForm("Edit","Admin",FormMethod.Post,new { enctype="multipart/form-data"}))
+    {
+        @Html.ValidationSummary()
+        <dl>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                <input type="text" id="Name" name="Name" class="form-control" value="@Model.Name"/>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.TextAreaFor(model => model.Description, new {@class = "form-control"})
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.TextBoxFor(model => model.Price, new {@class = "form-control"})
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+
+            <dd>
+                @Html.TextBoxFor(model => model.Category, new {@class = "form-control"})
+            </dd>
+            <dt>@Html.DisplayNameFor(model => model.ImageData)</dt>
+            <dd>@if (Model.ImageData == null)
+                {
+                    @:None
+                }
+                else
+                {
+                    <img src="@Url.Action("GetImage", "Admin", new {Model.ProductGuid})"/>
+                }</dd>
+
+        </dl>
+        <p>@Html.HiddenFor(model => model.ProductGuid)</p>
+        <p><input type="file" name="image" /></p>
+        <p>
+            <input type="submit" class="btn btn-info" value="Save" />
+            @Html.ActionLink("Back to List", "index")
+        </p>
+    }
+</div>

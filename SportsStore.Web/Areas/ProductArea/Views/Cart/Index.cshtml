@@ -1,0 +1,42 @@
+﻿@model  SportsStore.Web.Areas.ProductArea.Models.CartIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ProductArea/Views/Shared/_Layout.cshtml";
+}
+<h2>Index</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th class="text-center">Quantity</th>
+        <th class="text-left">Item</th>
+        <th class="text-right">Price</th>
+        <th class="text-right">SubTotal</th>
+        <th class="text-center">Operate</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cart.Lines)
+        {
+            <tr>
+                <td class="text-center">@item.Quantity</td>
+                <td class="text-left">@item.Product.Name</td>
+                <td class="text-right">@item.Product.Price</td>
+                <td class="text-right">@((item.Quantity*item.Product.Price).ToString("C"))</td>
+               <td class="text-center">
+                @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                {
+                    @Html.Hidden("ProductGuid", item.Product.ProductGuid)
+                    @Html.HiddenFor(x=>x.ReturnUrl)
+                    <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove "></span></button>
+                }
+                </td>  
+            </tr>
+        }
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">@Model.Cart.ComputeTotalValue().ToString("C")</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<p class="text-center"><a href="@Model.ReturnUrl" class="btn btn-info btn-lg">Continue Shopping</a></p>
